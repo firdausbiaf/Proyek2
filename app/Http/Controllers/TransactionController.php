@@ -15,6 +15,7 @@ use Auth;
 
 use App\Http\Requests\SaleRequest;
 use App\Http\Requests\TransactionRequest;
+use App\Product;
 
 class TransactionController extends Controller
 {
@@ -57,12 +58,14 @@ class TransactionController extends Controller
         $subTotal = $sales->sum('total_price');
 
         $customers = Customer::all();
+        $product = Product::all();
 
         return view('pages.transaction.create', [
             'title' => $title,
             'transactionCode' => $transactionCode,
             'items' => $items,
             'customers' => $customers,
+            'product' => $product,
             'subTotal' => $subTotal
         ]);
     }
@@ -118,6 +121,7 @@ class TransactionController extends Controller
         $subTotal = $sales->sum('total_price');
 
         $customers = Customer::all();
+        $product = Product::all();
 
         $transaction = Transaction::with([
             'customer',
@@ -144,6 +148,7 @@ class TransactionController extends Controller
             'transactionCode' => $transactionCode,
             'items' => $items,
             'customers' => $customers,
+            'product' => $product,
             'subTotal' => $subTotal,
             'data' => $data
         ]);

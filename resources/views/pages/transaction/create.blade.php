@@ -41,20 +41,11 @@
                     <div class="col-lg-4">
                         <div class="card">
                             <div class="card-header">
-                                Informasi
+                                Data Transaksi
                             </div>
                             <div class="card-body">
-                                <div class="form-group">
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <div class="input-group-text">
-                                                <i class="far fa-user"></i>
-                                            </div>
-                                        </div>
-                                        <input type="text" class="form-control" value="{{ Auth::user()->name }}" readonly>
-                                    </div>
-                                </div>
 
+                                <label>Kode Transaksi</label>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -63,9 +54,11 @@
                                             </div>
                                         </div>
                                         <input type="text" class="form-control" value="{{ $transactionCode }}" name="transaction_code" readonly>
+
                                     </div>
                                 </div>
 
+                                <label>Tanggal Transaksi</label>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
@@ -87,15 +80,23 @@
                                 Produk
                             </div>
                             <div class="card-body">
-                                <div class="form-group">
+                                {{-- <div class="form-group">
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <div class="input-group-text">
                                                 <i class="fas fa-barcode"></i>
                                             </div>
                                         </div>
-                                        <input type="text" class="form-control" name="product_code" placeholder="Kode Produk" value="{{ old('product_code') }}" required>
+                                                                                <input type="text" class="form-control" name="product_code" placeholder="Kode Produk" value="{{ old('product_code') }}" required>
                                     </div>
+                                </div> --}}
+                                <div class="form-group">
+                                    {{-- <label>Produk</label> --}}
+                                    <select name="product_code" class="custom-select">
+                                        @foreach ($product as $product)
+                                        <option value="{{ $product->product_code }}">{{ $product->name }}</option>
+                                        @endforeach
+                                    </select>
                                 </div>
 
                                 <div class="form-group">
@@ -111,6 +112,12 @@
                             </div>
                             <div class="card-footer text-right" style="margin-bottom: -9px;">
                                 <button type="submit" class="btn btn-primary">Kirim</button>
+                                
+                                {{-- @forelse ($items as $index => $item)
+                                <tr>
+                                    <th>{{ $item->product->name }}</th>
+                                    <th>{{ $item->quantity }}</th>
+                                </tr> --}}
                             </div>
                         </div>
                     </div>

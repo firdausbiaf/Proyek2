@@ -1,7 +1,7 @@
 <div class="main-sidebar sidebar-style-2">
     <aside id="sidebar-wrapper">
       <div class="sidebar-brand">
-        <a href="index.html">LaraPOS</a>
+        <a href="index.html">Baso Aci</a>
       </div>
       <div class="sidebar-brand sidebar-brand-sm">
         <a href="index.html">LP</a>
@@ -22,18 +22,18 @@
         <li class="{{ (Request::url() === route('product.index')
             || Request::url() === route('product-category.index')) ? 'dropdown active' : 'dropdown' }}">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-            <i class="ion-cube"></i> <span>Products</span>
+            <i class="ion-cube"></i> <span>Produk</span>
           </a>
           <ul class="dropdown-menu">
 
             <li class="{{ (Request::url() === route('product.index')) ? 'active' : '' }}">
               <a class="nav-link" href="{{ route('product.index') }}">
-                <i class="ion-android-list"></i> <span>Product List</span></a>
+                <i class="ion-android-list"></i> <span>List Produk</span></a>
             </li>
 
             <li class="{{ (Request::url() === route('product-category.index')) ? 'active' : '' }}">
               <a class="nav-link" href="{{ route('product-category.index') }}">
-                <i class="ion-pricetags"></i> <span>Product Categories</span>
+                <i class="ion-pricetags"></i> <span>Kategori Produk</span>
               </a>
             </li>
 
@@ -44,11 +44,11 @@
           </li>
 
           <li class="{{ (Request::url() === route('coupon.index')) ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('coupon.index') }}"><i class="ion-cash"></i> <span>Coupons</span></a>
+            <a class="nav-link" href="{{ route('coupon.index') }}"><i class="ion-cash"></i> <span>Kupon</span></a>
           </li>
 
           <li class="{{ (Request::url() === route('companyProfile.index')) ? 'active' : '' }}">
-            <a class="nav-link" href="{{ route('companyProfile.index') }}"><i class="ion-android-settings"></i> <span>Company Profile</span></a>
+            <a class="nav-link" href="{{ route('companyProfile.index') }}"><i class="ion-android-settings"></i> <span>Profil Toko</span></a>
           </li>
 
         </li>
@@ -56,26 +56,26 @@
 
       @endif
 
-      <li class="menu-header">LaraPOS</li>
+      <li class="menu-header">Baso Aci</li>
         <li class="{{ (Request::is('transaction/index') || Request::is('transaction/report') || Request::is('transaction/create/*')) ? 'dropdown active' : 'dropdown' }}">
           <a href="#" class="nav-link has-dropdown" data-toggle="dropdown">
-            <i class="ion-ios-cart"></i> <span>Transaction</span>
+            <i class="ion-ios-cart"></i> <span>Transaksi</span>
           </a>
           <ul class="dropdown-menu">
 
             <li class="{{ Request::is('transaction/create/*') ? 'active' : '' }}">
               <a class="nav-link" href="{{ route('transaction.create', AppHelper::transaction_code()) }}">
-                <i class="ion-bag"></i> <span>Create Transaction</span></a>
+                <i class="ion-bag"></i> <span>Buat Transaksi</span></a>
             </li>
             
             <li class="{{ Request::url() === route('transaction.index') ? 'active' : '' }}">
               <a class="nav-link" href="{{ route('transaction.index') }}">
-                <i class="ion-ios-list"></i> <span>Transaction List</span></a>
+                <i class="ion-ios-list"></i> <span>List Transaksi</span></a>
             </li>
 
             <li class="{{ Request::url() === route('transaction.report') ? 'active' : '' }}">
               <a class="nav-link" href="#" data-toggle="modal" data-target="#transactionModal">
-                <i class="ion-clipboard"></i> <span>Transaction Report</span></a>
+                <i class="ion-clipboard"></i> <span>Laporan Transaksi</span></a>
             </li>
 
           </ul>

@@ -192,3 +192,4 @@ $("#products-carousel").owlCarousel({
     }
   }
 });
+
